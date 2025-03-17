@@ -20,8 +20,8 @@ const QuoteForm: React.FC = () => {
       setIsSubmitting(false);
       setFormStep(2);
       toast({
-        title: "Quote request submitted!",
-        description: "We'll be in touch with you shortly.",
+        title: "Request submitted!",
+        description: "Local installers will contact you shortly with free quotes.",
       });
     }, 1500);
   };
@@ -43,6 +43,11 @@ const QuoteForm: React.FC = () => {
           <div className="space-y-2">
             <Label htmlFor="phone">Phone Number</Label>
             <Input id="phone" type="tel" placeholder="(123) 456-7890" required />
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="postcode">Postcode</Label>
+            <Input id="postcode" placeholder="SW1A 1AA" required />
           </div>
           
           <div className="space-y-2">
@@ -83,7 +88,7 @@ const QuoteForm: React.FC = () => {
             className="w-full bg-heat-600 hover:bg-heat-700 shadow-soft hover:shadow-glow transition-all duration-300"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Submitting..." : "Get Your Free Quote"}
+            {isSubmitting ? "Submitting..." : "Get Free Quotes From Local Installers"}
             {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" />}
           </Button>
           
@@ -98,7 +103,7 @@ const QuoteForm: React.FC = () => {
           </div>
           <h3 className="text-2xl font-bold mb-2 animate-fade-in">Thank You!</h3>
           <p className="text-muted-foreground mb-6 animate-fade-in-up">
-            Your quote request has been submitted successfully. One of our experts will contact you shortly.
+            Your request has been submitted successfully. Local installers in your area will contact you shortly with competitive quotes.
           </p>
           <Button 
             onClick={() => setFormStep(1)}

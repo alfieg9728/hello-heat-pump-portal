@@ -21,7 +21,11 @@ import {
   Zap,
   Calendar,
   HeartHandshake,
-  Settings
+  Settings,
+  Users,
+  Shield,
+  Sparkles,
+  HandCoins
 } from 'lucide-react';
 
 const Index = () => {
@@ -58,13 +62,13 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* VSL/How It Works Section */}
+      {/* How It Works Section */}
       <section id="how-it-works" className="section-container bg-white">
         <div className="fade-in-section">
           <SectionTitle 
-            preTitle="Simple Process"
-            title="How It Works"
-            description="Our streamlined approach makes upgrading to an air source heat pump easy and hassle-free."
+            preTitle="Easy Process"
+            title="How Our Service Works"
+            description="We make it simple to find and compare quotes from trusted heat pump installers in your area."
           />
           
           <div className="relative max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-medium">
@@ -73,7 +77,7 @@ const Index = () => {
               <div className="text-white text-center p-8">
                 <Zap className="w-16 h-16 mx-auto mb-4 animate-pulse-soft" />
                 <h3 className="text-2xl font-semibold mb-2">Video Placeholder</h3>
-                <p className="text-heat-300">A video explaining the benefits and installation process of heat pumps would appear here.</p>
+                <p className="text-heat-300">A video explaining how our matching service connects you with the best local installers would appear here.</p>
               </div>
             </div>
           </div>
@@ -83,24 +87,24 @@ const Index = () => {
               <div className="w-12 h-12 bg-heat-100 text-heat-600 rounded-full flex items-center justify-center mb-4">
                 <span className="font-semibold">1</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Request a Quote</h3>
-              <p className="text-muted-foreground">Fill out our simple form to get a tailored quote based on your home's needs.</p>
+              <h3 className="text-xl font-semibold mb-2">Complete Our Form</h3>
+              <p className="text-muted-foreground">Fill out our simple form with your details and requirements to get started.</p>
             </div>
             
             <div className="flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-heat-100 text-heat-600 rounded-full flex items-center justify-center mb-4">
                 <span className="font-semibold">2</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Home Assessment</h3>
-              <p className="text-muted-foreground">Our experts conduct a thorough assessment to design the perfect system for you.</p>
+              <h3 className="text-xl font-semibold mb-2">Get Matched</h3>
+              <p className="text-muted-foreground">We match you with up to 3 certified installers in your area who can meet your needs.</p>
             </div>
             
             <div className="flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-heat-100 text-heat-600 rounded-full flex items-center justify-center mb-4">
                 <span className="font-semibold">3</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Professional Installation</h3>
-              <p className="text-muted-foreground">Our certified technicians handle the entire installation with minimal disruption.</p>
+              <h3 className="text-xl font-semibold mb-2">Compare & Choose</h3>
+              <p className="text-muted-foreground">Receive competitive quotes and choose the installer and system that's right for you.</p>
             </div>
           </div>
         </div>
@@ -137,7 +141,7 @@ const Index = () => {
           
           <div className="mt-12 text-center">
             <CTAButton href="#quote-form">
-              Solve These Problems Today
+              Find Installers Today
             </CTAButton>
           </div>
         </div>
@@ -192,32 +196,93 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Social Proof Section */}
-      <section id="testimonials" className="section-container bg-heat-100">
+      {/* Why Choose Us Section */}
+      <section id="why-us" className="section-container bg-heat-100">
         <div className="fade-in-section">
           <SectionTitle 
-            preTitle="Happy Customers"
-            title="What Our Clients Say"
-            description="Don't just take our word for it. Hear from homeowners who have already made the switch."
+            preTitle="Why Use Our Service"
+            title="The Benefits of Using Our Matching Service"
+            description="We connect you with the right installers to ensure you get the best heat pump solution for your home."
+          />
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <BenefitCard 
+              icon={<Users className="h-10 w-10" />}
+              title="Vetted Installers"
+              description="We only work with MCS-certified installers who meet our high standards for quality and service."
+              className="bg-white"
+            />
+            
+            <BenefitCard 
+              icon={<Shield className="h-10 w-10" />}
+              title="No Obligation"
+              description="Receive and compare quotes with no pressure - you're free to choose the installer that best meets your needs."
+              className="bg-white"
+            />
+            
+            <BenefitCard 
+              icon={<Sparkles className="h-10 w-10" />}
+              title="100% Free Service"
+              description="Our matching service is completely free to use - you only pay the installer if you decide to proceed."
+              className="bg-white"
+            />
+            
+            <BenefitCard 
+              icon={<HandCoins className="h-10 w-10" />}
+              title="Competitive Quotes"
+              description="Get multiple quotes to compare, helping you find the best value for your heat pump installation."
+              className="bg-white"
+            />
+            
+            <BenefitCard 
+              icon={<Clock4 className="h-10 w-10" />}
+              title="Save Time"
+              description="No need to research and contact multiple companies - we do the legwork for you."
+              className="bg-white"
+            />
+            
+            <BenefitCard 
+              icon={<BarChart className="h-10 w-10" />}
+              title="Expert Advice"
+              description="Installers will provide tailored recommendations based on your home's specific requirements."
+              className="bg-white"
+            />
+          </div>
+          
+          <div className="mt-12 text-center">
+            <CTAButton href="#quote-form">
+              Get Free Installer Quotes
+            </CTAButton>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Section */}
+      <section id="testimonials" className="section-container">
+        <div className="fade-in-section">
+          <SectionTitle 
+            preTitle="Success Stories"
+            title="What Our Users Say"
+            description="Don't just take our word for it. Hear from homeowners who found their perfect installer through our service."
           />
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <TestimonialCard 
-              quote="Our energy bills have dropped by 40% since switching to an air source heat pump. The installation was quick and the team was professional throughout."
+              quote="The process was so simple. I filled out the form and within 24 hours I had quotes from three reputable installers. I was able to compare and choose the best one for my needs."
               author="Sarah Johnson"
               role="Homeowner"
               company="London"
             />
             
             <TestimonialCard 
-              quote="I was skeptical at first, but after a full winter with our new heat pump system, I'm completely convinced. Our home stays at a perfect temperature and our bills are much lower."
+              quote="I was worried about finding a trustworthy installer, but this service took all the stress away. The installer I chose was professional, knowledgeable, and completed the work to a high standard."
               author="David Wilson"
               role="Homeowner"
               company="Manchester"
             />
             
             <TestimonialCard 
-              quote="The assessment process was thorough and the team worked with us to design a system that fit our older property perfectly. We couldn't be happier with the results."
+              quote="Using this service saved me hours of research. All three installers who contacted me were well-qualified and provided detailed quotes. I'm very happy with my new heat pump system."
               author="Emma Thompson"
               role="Homeowner"
               company="Edinburgh"
@@ -227,160 +292,27 @@ const Index = () => {
           <div className="mt-12 flex justify-center items-center gap-4">
             <div className="flex items-center">
               <ThumbsUp className="h-5 w-5 text-heat-600 mr-2" />
-              <span className="text-sm font-medium">97% of customers recommend us</span>
+              <span className="text-sm font-medium">97% of users recommend our service</span>
             </div>
             <div className="h-4 w-px bg-border mx-2" />
             <div className="flex items-center">
               <CheckCircle2 className="h-5 w-5 text-heat-600 mr-2" />
-              <span className="text-sm font-medium">5-star rated installation service</span>
+              <span className="text-sm font-medium">5-star rated matching service</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Quote Form CTA Section */}
-      <section id="quote-form" className="section-container">
+      <section id="quote-form" className="section-container bg-heat-100">
         <div className="fade-in-section">
           <SectionTitle 
             preTitle="Get Started Today"
-            title="Request Your Free Heat Pump Quote"
-            description="Fill in the form below and one of our experts will prepare a custom quote for your home."
+            title="Get Free Quotes From Trusted Installers"
+            description="Fill in the form below to get matched with certified heat pump installers in your area."
           />
           
           <QuoteForm />
-        </div>
-      </section>
-
-      {/* The Roadmap Section */}
-      <section id="roadmap" className="section-container bg-heat-100">
-        <div className="fade-in-section">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block px-3 py-1 mb-4 text-xs font-medium tracking-wider text-heat-700 uppercase bg-heat-200 rounded-full">
-                The Installation Journey
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-                Your Heat Pump Roadmap
-              </h2>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-heat-600 text-white rounded-full flex items-center justify-center">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-1">Initial Consultation</h3>
-                    <p className="text-muted-foreground">We'll discuss your needs, property, and current heating system to understand your requirements.</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-heat-600 text-white rounded-full flex items-center justify-center">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-1">Technical Survey</h3>
-                    <p className="text-muted-foreground">Our engineers will visit your property to assess its suitability and design a customized system.</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-heat-600 text-white rounded-full flex items-center justify-center">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-1">Detailed Proposal</h3>
-                    <p className="text-muted-foreground">You'll receive a comprehensive proposal including system design, costs, and expected savings.</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-heat-600 text-white rounded-full flex items-center justify-center">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-1">Professional Installation</h3>
-                    <p className="text-muted-foreground">Our certified technicians will install your system with minimal disruption to your home.</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-heat-600 text-white rounded-full flex items-center justify-center">
-                    5
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-1">Handover & Support</h3>
-                    <p className="text-muted-foreground">We'll show you how to operate your new system and provide ongoing support for years to come.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <div className="inline-block px-3 py-1 mb-4 text-xs font-medium tracking-wider text-heat-700 uppercase bg-heat-200 rounded-full">
-                Complete Package
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-                What's Included
-              </h2>
-              <div className="glass-card p-6">
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-heat-600 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold">Air Source Heat Pump Unit</h4>
-                      <p className="text-sm text-muted-foreground">Premium, energy-efficient heat pump from leading manufacturers.</p>
-                    </div>
-                  </li>
-                  
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-heat-600 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold">Full Installation</h4>
-                      <p className="text-sm text-muted-foreground">Complete installation by certified professionals with all necessary connections.</p>
-                    </div>
-                  </li>
-                  
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-heat-600 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold">Smart Controls</h4>
-                      <p className="text-sm text-muted-foreground">Modern programmable thermostat and control system, often with smartphone integration.</p>
-                    </div>
-                  </li>
-                  
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-heat-600 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold">System Configuration</h4>
-                      <p className="text-sm text-muted-foreground">Expert setup and optimization for maximum efficiency in your specific property.</p>
-                    </div>
-                  </li>
-                  
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-heat-600 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold">Warranty & Support</h4>
-                      <p className="text-sm text-muted-foreground">Comprehensive warranty with dedicated after-sales support and maintenance options.</p>
-                    </div>
-                  </li>
-                  
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-heat-600 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold">Certification & Documentation</h4>
-                      <p className="text-sm text-muted-foreground">All necessary certifications and documentation for compliance and incentive claims.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-12 text-center">
-            <CTAButton href="#quote-form">
-              Start Your Heat Pump Journey
-            </CTAButton>
-          </div>
         </div>
       </section>
 
@@ -391,37 +323,37 @@ const Index = () => {
       <section id="about" className="section-container bg-white">
         <div className="fade-in-section">
           <SectionTitle 
-            preTitle="Our Company"
-            title="About Us"
-            description="We're dedicated to bringing sustainable heating solutions to homes across the country."
+            preTitle="Our Service"
+            title="About Our Matching Service"
+            description="We're dedicated to connecting homeowners with the best heat pump installers across the UK."
           />
           
           <div className="glass-card p-8 max-w-3xl mx-auto">
             <p className="mb-4">
-              With over a decade of experience in renewable energy solutions, our team of certified engineers and energy experts are passionate about helping homeowners transition to cleaner, more efficient heating systems.
+              Our free matching service was created to help homeowners easily find and compare quotes from certified heat pump installers. We understand that transitioning to a new heating system is a significant investment, which is why we carefully vet all installers in our network.
             </p>
             <p className="mb-4">
-              We believe that air source heat pumps represent the future of home heating – offering significant cost savings while reducing environmental impact. Our mission is to make this technology accessible to everyone through expert guidance, quality installations, and exceptional service.
+              We believe that air source heat pumps represent the future of home heating – offering significant cost savings while reducing environmental impact. Our mission is to make this technology accessible to everyone by connecting them with qualified professionals.
             </p>
             <p>
-              Every installation we complete is backed by our commitment to quality and customer satisfaction. We're proud to have helped thousands of homeowners transform their heating systems and reduce their carbon footprint.
+              Our service is completely free to use, with no obligation to proceed with any quotes you receive. We're here to simplify your journey to more efficient, sustainable home heating.
             </p>
           </div>
           
           <div className="mt-12 flex flex-col md:flex-row gap-8 items-center justify-center">
             <div className="flex items-center gap-2">
-              <BarChart className="h-5 w-5 text-heat-600" />
-              <span className="font-medium">MCS Certified</span>
+              <Shield className="h-5 w-5 text-heat-600" />
+              <span className="font-medium">MCS Certified Installers</span>
             </div>
             <div className="h-4 w-px bg-border hidden md:block" />
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-5 w-5 text-heat-600" />
-              <span className="font-medium">RECC Member</span>
+              <span className="font-medium">No-Obligation Quotes</span>
             </div>
             <div className="h-4 w-px bg-border hidden md:block" />
             <div className="flex items-center gap-2">
               <ThumbsUp className="h-5 w-5 text-heat-600" />
-              <span className="font-medium">TrustMark Approved</span>
+              <span className="font-medium">100% Free Service</span>
             </div>
           </div>
         </div>
@@ -431,14 +363,14 @@ const Index = () => {
       <section className="section-container bg-heat-600 text-white">
         <div className="fade-in-section">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Home Heating?</h2>
-            <p className="text-xl mb-8 text-heat-100">Get your free quote today and join thousands of satisfied customers who have made the switch to sustainable heating.</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Find Your Perfect Heat Pump Installer?</h2>
+            <p className="text-xl mb-8 text-heat-100">Get your free quotes today and join thousands of satisfied homeowners who've found their ideal installer through our service.</p>
             <CTAButton 
               href="#quote-form"
               size="lg"
               className="bg-white text-heat-700 hover:bg-heat-100"
             >
-              Get Your Free Quote
+              Get Free Quotes Now
             </CTAButton>
           </div>
         </div>
@@ -450,7 +382,7 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-xl font-semibold text-white mb-4">Heat Pump Quotes</h3>
-              <p className="text-sm mb-4">Providing efficient, sustainable heating solutions for homes across the UK.</p>
+              <p className="text-sm mb-4">Connecting homeowners with trusted heat pump installers across the UK.</p>
               <div className="flex space-x-4">
                 <a href="#" className="text-heat-200 hover:text-white transition-colors">
                   <span className="sr-only">Facebook</span>
@@ -478,7 +410,8 @@ const Index = () => {
               <ul className="space-y-2 text-sm">
                 <li><a href="#" className="hover:text-white transition-colors animated-underline">Home</a></li>
                 <li><a href="#benefits" className="hover:text-white transition-colors animated-underline">Benefits</a></li>
-                <li><a href="#quote-form" className="hover:text-white transition-colors animated-underline">Get a Quote</a></li>
+                <li><a href="#why-us" className="hover:text-white transition-colors animated-underline">Why Use Us</a></li>
+                <li><a href="#quote-form" className="hover:text-white transition-colors animated-underline">Get Quotes</a></li>
                 <li><a href="#about" className="hover:text-white transition-colors animated-underline">About Us</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors animated-underline">FAQs</a></li>
               </ul>

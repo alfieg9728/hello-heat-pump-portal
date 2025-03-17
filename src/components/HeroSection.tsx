@@ -12,20 +12,20 @@ const HeroSection: React.FC = () => {
       <div className="relative section-container">
         <div className="flex flex-col items-center justify-center text-center">
           <div className="inline-block px-3 py-1 mb-4 text-xs font-medium tracking-wider text-heat-700 uppercase bg-heat-200 rounded-full animate-fade-in">
-            Save up to 50% on heating costs
+            Compare quotes from trusted installers
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 max-w-4xl mx-auto animate-fade-in">
-            Transform Your Home with Energy-Efficient Heat Pumps
+            Find The Perfect Heat Pump Installer For Your Home
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in-up">
-            Get custom quotes for air source heat pumps that reduce your carbon footprint and save money on energy bills.
+            We connect you with certified local installers who offer competitive quotes on energy-efficient heat pump systems.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in-up">
             <CTAButton href="#quote-form" size="lg">
-              Get Your Free Quote
+              Get Free Quotes
             </CTAButton>
             <CTAButton href="#how-it-works" variant="outline" size="lg" icon={false}>
               Learn How It Works
@@ -35,20 +35,20 @@ const HeroSection: React.FC = () => {
           {/* Trust badges */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center w-full max-w-3xl mx-auto opacity-70 animate-fade-in-up">
             <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-heat-800">5,000+</div>
-              <div className="text-sm text-muted-foreground">Installations</div>
+              <div className="text-3xl font-bold text-heat-800">300+</div>
+              <div className="text-sm text-muted-foreground">Certified Installers</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-heat-800">£2.5M+</div>
-              <div className="text-sm text-muted-foreground">Customer Savings</div>
+              <div className="text-3xl font-bold text-heat-800">5,000+</div>
+              <div className="text-sm text-muted-foreground">Matches Made</div>
             </div>
             <div className="flex flex-col items-center">
               <div className="text-3xl font-bold text-heat-800">4.9/5</div>
               <div className="text-sm text-muted-foreground">Customer Rating</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-heat-800">10 Yr</div>
-              <div className="text-sm text-muted-foreground">Warranty</div>
+              <div className="text-3xl font-bold text-heat-800">Free</div>
+              <div className="text-sm text-muted-foreground">No-Obligation Quotes</div>
             </div>
           </div>
         </div>
