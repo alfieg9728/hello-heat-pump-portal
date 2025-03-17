@@ -11,20 +11,43 @@ const QuoteForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStep, setFormStep] = useState(1);
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+  
+    const formData = {
+      name: (document.getElementById("name") as HTMLInputElement)?.value,
+      email: (document.getElementById("email") as HTMLInputElement)?.value,
+      phone: (document.getElementById("phone") as HTMLInputElement)?.value,
+      postcode: (document.getElementById("postcode") as HTMLInputElement)?.value,
+      propertyType: (document.getElementById("property-type") as HTMLInputElement)?.value,
+      currentHeating: (document.getElementById("current-heating") as HTMLInputElement)?.value,
+    };
+  
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbx2f4C-UOnLnUEx9UziBgyNh44HBkkgzCAWzF980bj4us6WzWgpuXvSr_3XeZEo8lDQFA/exec", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+      });
+  
       setFormStep(2);
       toast({
         title: "Request submitted!",
         description: "Local installers will contact you shortly with free quotes.",
       });
-    }, 1500);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Submission failed",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+  
 
   return (
     <div className="glass-card p-6 md:p-8 w-full max-w-md mx-auto">
@@ -42,7 +65,7 @@ const QuoteForm: React.FC = () => {
           
           <div className="space-y-2">
             <Label htmlFor="phone">Phone Number</Label>
-            <Input id="phone" type="tel" placeholder="(123) 456-7890" required />
+            <Input id="phone" type="tel" placeholder="07123456789" required />
           </div>
           
           <div className="space-y-2">
