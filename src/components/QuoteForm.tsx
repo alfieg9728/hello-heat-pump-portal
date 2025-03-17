@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,11 +6,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "@/components/ui/use-toast";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-const QuoteForm: React.FC = () => {
+const QuoteForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStep, setFormStep] = useState(1);
   
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
   
@@ -48,7 +47,6 @@ const QuoteForm: React.FC = () => {
     }
   };
   
-
   return (
     <div className="glass-card p-6 md:p-8 w-full max-w-md mx-auto">
       {formStep === 1 ? (
@@ -75,8 +73,8 @@ const QuoteForm: React.FC = () => {
           
           <div className="space-y-2">
             <Label htmlFor="property-type">Property Type</Label>
-            <Select>
-              <SelectTrigger id="property-type">
+            <Select id="property-type" required>
+              <SelectTrigger>
                 <SelectValue placeholder="Select property type" />
               </SelectTrigger>
               <SelectContent>
@@ -92,8 +90,8 @@ const QuoteForm: React.FC = () => {
           
           <div className="space-y-2">
             <Label htmlFor="current-heating">Current Heating System</Label>
-            <Select>
-              <SelectTrigger id="current-heating">
+            <Select id="current-heating" required>
+              <SelectTrigger>
                 <SelectValue placeholder="Select current heating" />
               </SelectTrigger>
               <SelectContent>
@@ -130,8 +128,7 @@ const QuoteForm: React.FC = () => {
           </p>
           <Button 
             onClick={() => setFormStep(1)}
-            variant="outline"
-            className="animate-fade-in-up"
+            className="border border-input bg-background hover:bg-accent hover:text-accent-foreground animate-fade-in-up"
           >
             Submit Another Request
           </Button>
