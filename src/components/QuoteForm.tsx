@@ -1,0 +1,116 @@
+
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { toast } from "@/components/ui/use-toast";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+
+const QuoteForm: React.FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStep, setFormStep] = useState(1);
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setFormStep(2);
+      toast({
+        title: "Quote request submitted!",
+        description: "We'll be in touch with you shortly.",
+      });
+    }, 1500);
+  };
+
+  return (
+    <div className="glass-card p-6 md:p-8 w-full max-w-md mx-auto">
+      {formStep === 1 ? (
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-2">
+            <Label htmlFor="name">Full Name</Label>
+            <Input id="name" placeholder="John Smith" required />
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="email">Email Address</Label>
+            <Input id="email" type="email" placeholder="john@example.com" required />
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="phone">Phone Number</Label>
+            <Input id="phone" type="tel" placeholder="(123) 456-7890" required />
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="property-type">Property Type</Label>
+            <Select>
+              <SelectTrigger id="property-type">
+                <SelectValue placeholder="Select property type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="detached">Detached House</SelectItem>
+                <SelectItem value="semi-detached">Semi-detached</SelectItem>
+                <SelectItem value="terraced">Terraced</SelectItem>
+                <SelectItem value="flat">Flat/Apartment</SelectItem>
+                <SelectItem value="bungalow">Bungalow</SelectItem>
+                <SelectItem value="other">Other</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="current-heating">Current Heating System</Label>
+            <Select>
+              <SelectTrigger id="current-heating">
+                <SelectValue placeholder="Select current heating" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="gas">Gas Boiler</SelectItem>
+                <SelectItem value="oil">Oil Boiler</SelectItem>
+                <SelectItem value="electric">Electric Heating</SelectItem>
+                <SelectItem value="none">No Central Heating</SelectItem>
+                <SelectItem value="other">Other</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <Button 
+            type="submit" 
+            className="w-full bg-heat-600 hover:bg-heat-700 shadow-soft hover:shadow-glow transition-all duration-300"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : "Get Your Free Quote"}
+            {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" />}
+          </Button>
+          
+          <p className="text-xs text-center text-muted-foreground">
+            By submitting this form, you agree to our <a href="#" className="underline hover:text-heat-600">Privacy Policy</a> and <a href="#" className="underline hover:text-heat-600">Terms of Service</a>.
+          </p>
+        </form>
+      ) : (
+        <div className="text-center py-8">
+          <div className="mb-6 flex justify-center">
+            <CheckCircle2 className="h-16 w-16 text-green-500 animate-fade-in" />
+          </div>
+          <h3 className="text-2xl font-bold mb-2 animate-fade-in">Thank You!</h3>
+          <p className="text-muted-foreground mb-6 animate-fade-in-up">
+            Your quote request has been submitted successfully. One of our experts will contact you shortly.
+          </p>
+          <Button 
+            onClick={() => setFormStep(1)}
+            variant="outline"
+            className="animate-fade-in-up"
+          >
+            Submit Another Request
+          </Button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default QuoteForm;

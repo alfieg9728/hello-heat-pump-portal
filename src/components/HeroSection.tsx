@@ -1,0 +1,67 @@
+
+import React from 'react';
+import CTAButton from './CTAButton';
+
+const HeroSection: React.FC = () => {
+  return (
+    <section className="relative w-full overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-heat-100 to-heat-200" />
+      
+      {/* Content container */}
+      <div className="relative section-container">
+        <div className="flex flex-col items-center justify-center text-center">
+          <div className="inline-block px-3 py-1 mb-4 text-xs font-medium tracking-wider text-heat-700 uppercase bg-heat-200 rounded-full animate-fade-in">
+            Save up to 50% on heating costs
+          </div>
+          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 max-w-4xl mx-auto animate-fade-in">
+            Transform Your Home with Energy-Efficient Heat Pumps
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in-up">
+            Get custom quotes for air source heat pumps that reduce your carbon footprint and save money on energy bills.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in-up">
+            <CTAButton href="#quote-form" size="lg">
+              Get Your Free Quote
+            </CTAButton>
+            <CTAButton href="#how-it-works" variant="outline" size="lg" icon={false}>
+              Learn How It Works
+            </CTAButton>
+          </div>
+          
+          {/* Trust badges */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center w-full max-w-3xl mx-auto opacity-70 animate-fade-in-up">
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold text-heat-800">5,000+</div>
+              <div className="text-sm text-muted-foreground">Installations</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold text-heat-800">£2.5M+</div>
+              <div className="text-sm text-muted-foreground">Customer Savings</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold text-heat-800">4.9/5</div>
+              <div className="text-sm text-muted-foreground">Customer Rating</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold text-heat-800">10 Yr</div>
+              <div className="text-sm text-muted-foreground">Warranty</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Wave divider */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-[60px] text-background fill-current">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
